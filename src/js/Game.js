@@ -109,7 +109,8 @@ class Game {
   }
 
   reset() {
-    this.gameObjects.forEach((x) => x.setType('E'));
+    this.gameObjects.filter((x) => x.type !== 'E')
+      .forEach((x) => x.setType('E'));
     this.snakeSize = 4;
     this.snake = [];
     this.directionBuffer = null;
