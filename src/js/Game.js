@@ -82,6 +82,14 @@ class Game {
     if (this.snake[0].cell[e] && this.snake[0].cell[e].type !== 'S' && this.directionBuffer) this.directionBuffer = e;
   }
 
+  increaseScore(amount, piece) {
+    for(let i = 0; i < amount; i++) {
+      this.snakeSize++;
+      this.snake.unshift(piece);
+      document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 5);
+    }
+  }
+
   moveSnake(e) {
     const snek = this.snake[0].cell[e];
     if (!snek) return;
@@ -91,11 +99,7 @@ class Game {
         this.gameOver();
         break;
       case 'F':
-        this.snakeSize++;
-        this.snakeSize++;
-        this.snake.unshift(snek);
-        this.snake.unshift(snek);
-        document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 5);
+        this.increaseScore(2, snek);
         this.placeFruit();
       case 'E':
         this.snake.unshift(snek);
