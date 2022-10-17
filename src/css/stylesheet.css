@@ -14,6 +14,7 @@ body {
   font-family: "Segoe UI";
   font-size: auto;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 table {
@@ -53,10 +54,9 @@ td {
   user-select: none;
 }
 
-.score {
+#score {
   z-index: 1;
   margin-top: -31.5rem;
-  margin-right: -40rem;
   font-size: 1.2em;
   user-select: none;
   text-align: right;
