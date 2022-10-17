@@ -34,7 +34,7 @@ td {
   width: 1rem;
 }
 
-#board {
+.flex {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -42,7 +42,27 @@ td {
   right: 0;
 
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.hover-text {
+  z-index: 1;
+  margin-top: -20rem;
+  font-size: 1.8em;
+  user-select: none;
+}
+
+.score {
+  z-index: 1;
+  margin-top: -31.5rem;
+  margin-right: -40rem;
+  font-size: 1.2em;
+  user-select: none;
+  text-align: right;
+  font-weight: bold;
+}
+
+.disabled {
+  display: none;
 }

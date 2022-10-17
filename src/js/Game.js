@@ -72,10 +72,14 @@ class Game {
     if (this.lockGame) return;
     if (e === 'restart') this.gameOver();
     if (e === 'pause') {
-      this.gamePaused = !this.gamePaused;
+      if (!this.directionBuffer) {
+        this.directionBuffer = 'left';
+        document.getElementById('hoverText').classList.toggle('disabled', this.directionBuffer !== null);
+      }
+      else this.gamePaused = !this.gamePaused;
       return;
     }
-    if (this.snake[0].cell[e] && this.snake[0].cell[e].type !== 'S') this.directionBuffer = e;
+    if (this.snake[0].cell[e] && this.snake[0].cell[e].type !== 'S' && this.directionBuffer) this.directionBuffer = e;
   }
 
   moveSnake(e) {
@@ -88,7 +92,10 @@ class Game {
         break;
       case 'F':
         this.snakeSize++;
+        this.snakeSize++;
         this.snake.unshift(snek);
+        this.snake.unshift(snek);
+        document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 5);
         this.placeFruit();
       case 'E':
         this.snake.unshift(snek);
