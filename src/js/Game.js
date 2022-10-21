@@ -75,6 +75,7 @@ class Game {
       if (!this.directionBuffer) {
         this.directionBuffer = 'left';
         document.getElementById('hoverText').classList.toggle('disabled', this.directionBuffer !== null);
+        document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 4);
       }
       else this.gamePaused = !this.gamePaused;
       return;
