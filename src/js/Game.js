@@ -92,8 +92,12 @@ class Game {
   }
 
   moveSnake(e) {
+    if (!e) return;
     const snek = this.snake[0].cell[e];
-    if (!snek) return;
+    if (!snek) {
+      this.gameOver();
+      return;
+    }
     // Add new snake part to the beginning of array, then pop last snake piece.
     switch (snek.type) {
       case 'S':
