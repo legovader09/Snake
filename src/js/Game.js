@@ -86,7 +86,7 @@ class Game {
     for(let i = 0; i < amount; i++) {
       this.snakeSize++;
       this.snake.unshift(piece);
-      document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 5);
+      document.getElementById('score').innerText = 'Score: ' + (this.snakeSize - 4);
     }
   }
 
