@@ -11,8 +11,8 @@
 
 body {
   background-color: beige;
-  font-family: "Segoe UI";
-  font-size: auto;
+  font-family: "Segoe UI", "JetBrains Mono", monospace;
+  font-size: 24px;
   text-align: center;
   flex-wrap: wrap;
 }

@@ -8,8 +8,8 @@ class Game {
     this.gameObjects = [];
     this.snakeSize = 4;
     this.snake = [];
-    this.directionBuffer;
-    this.snakeDirection;
+    this.directionBuffer = null;
+    this.snakeDirection = null;
     this.gamePaused = false;
     this.lockGame = false;
 
