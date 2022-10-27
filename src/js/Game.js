@@ -12,6 +12,7 @@ class Game {
     this.snakeDirection = null;
     this.gamePaused = false;
     this.lockGame = false;
+    this.moveBuffer = 0;
 
     this.drawMap();
     this.setObjectNeighbours();
@@ -31,6 +32,7 @@ class Game {
         let td = document.createElement('td');
         td.id = `${x},${y}`;
         this.gameObjects.push(new ItemObject(x, y));
+        if ((x + y) % 2 === 1) td.classList.add('odd');
         tr.appendChild(td);
       }
       table.appendChild(tr);
@@ -92,7 +94,9 @@ class Game {
   }
 
   moveSnake(e) {
-    if (!e) return;
+    this.moveBuffer += 5;
+    if (!e || this.moveBuffer <= 10) return;
+    this.moveBuffer = 0;
     const snek = this.snake[0].cell[e];
     if (!snek) {
       this.gameOver();
@@ -104,8 +108,10 @@ class Game {
         this.gameOver();
         break;
       case 'F':
-        this.increaseScore(2, snek);
         this.placeFruit();
+        snek.setType('S');
+        this.increaseScore(2, snek);
+        break;
       case 'E':
         this.snake.unshift(snek);
         snek.setType('S');

@@ -17,7 +17,8 @@ class ItemObject {
 
   setType(type) {
     this.type = type;
-    document.getElementById(`${this.cell.x},${this.cell.y}`).style.backgroundColor = `var(--${type})`;
+    const td = document.getElementById(`${this.cell.x},${this.cell.y}`);
+    td.style.backgroundColor = `var(--${td.classList.contains('odd') && type === 'E' ? 'grid-odd' : type})`
   }
 }
 

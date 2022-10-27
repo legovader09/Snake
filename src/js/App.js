@@ -6,4 +6,4 @@ window.addEventListener("keypress", (e) => {
   e.preventDefault();
   return window.Game.changeDirection(getDirection(e.key));
 });
-window.addEventListener("load", (e) => setInterval(() => window.Game.gameLoop(), 100));
+window.addEventListener("load", (e) => setInterval(() => window.Game.gameLoop(), 30));
