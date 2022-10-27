@@ -141,6 +141,7 @@ class Game {
     this.placeFruit();
     this.lockGame = false;
     this.gamePaused = false;
+    this.moveBuffer = 0;
   }
 }
 
