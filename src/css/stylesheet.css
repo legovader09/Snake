@@ -3,7 +3,7 @@
   --E: #f4ffee;
   --O: #808080;
   --F: #ff4d00;
-  --grid-odd: #000000;
+  --grid-odd: #ddf4d0;
 }
 
 * {
@@ -19,7 +19,7 @@ body {
 }
 
 table {
-  background-color: black;
+  background-color: var(--E);
   border: 0.2rem solid black;
   border-collapse: collapse;
   border-spacing: 0;
