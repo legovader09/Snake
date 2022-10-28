@@ -41,7 +41,7 @@ td {
 }
 
 .hover-text {
-  margin-top: -20rem;
+  margin-top: -25rem;
   font-size: 1.8em;
   user-select: none;
 }
@@ -62,7 +62,7 @@ td {
 
 @media only screen and (min-width: 1024px) {
   td {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.25rem;
+    width: 1.25rem;
   }
 }
